@@ -1,0 +1,53 @@
+@use '../abstracts' as vars;
+
+.footer {
+    @include vars.box-shrink;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    padding-top: 15px;
+    border-top: 2px solid vars.$color-text-tertiary;
+
+    &__author {
+        color: vars.$color-ui-primary;
+    }
+
+    &__form {
+        display: flex;
+        align-items: stretch;
+    }
+
+    &__input {
+        border: 1px solid vars.$color-text-tertiary;
+        border-right: none;
+        padding: 0 10px;
+
+        &::-webkit-input-placeholder, &::-moz-placeholder, &::placeholder {
+            font-style: italic;
+        }
+    }
+
+    @include vars.smaller {
+        padding-top: 25px;
+        height: 90px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+
+    @include vars.narrow {
+        &__form {
+            margin-top: 20px;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        &__input {
+            border: 1px solid vars.$color-text-tertiary;
+            border-bottom: none;
+            height: 33px;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use '../abstracts' as vars;
+
+.header {
+    @include vars.box-shrink;
+    color: vars.$color-text-secondary;
+}
+
+.header-background {
+    background-image: linear-gradient(to bottom, vars.$color-transparent-primary, vars.$color-transparent-secondary), url('#{vars.$img-path}/eagle.jpg');
+    background-position: center center;
+    background-size: cover;
+}
+
+

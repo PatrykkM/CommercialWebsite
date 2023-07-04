@@ -1,0 +1,48 @@
+@use '../abstracts' as vars;
+
+.socials {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity vars.$transition-length ease-out;;
+
+    &__item {
+        width: 70px;
+        height: 70px;
+        background: vars.$color-ui-secondary;
+        border-right: 1px solid vars.$color-ui-primary;
+        transition: background vars.$transition-length ease-out;
+
+        &:last-of-type {
+            border: none;
+        }
+
+        &:hover{
+            background: vars.$color-ui-primary;;
+        }
+    }
+
+    @include vars.medium {
+        &__item {
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    @include vars.smaller {
+        &__item {
+            width: 70px;
+            height: 70px;
+        }
+    }
+
+    @include vars.narrow {
+        &__item {
+            width: 50px;
+            height: 50px;
+        }
+    }
+}

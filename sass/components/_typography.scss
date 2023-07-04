@@ -1,0 +1,42 @@
+@use '../abstracts' as vars;
+
+.regular-text {
+    font-size: 17px;
+
+    @include vars.smaller {
+        font-size: 14px;
+    }
+}
+
+.regular-text--bold {
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: vars.$color-text-primary;
+}
+
+.regular-text--light {
+    color: vars.$color-text-tertiary;
+    line-height: 25px;
+}
+
+.regular-text--italic {
+    font-style: italic;
+}
+
+.handwriting-text {
+    font-family: vars.$font-family-subtitle;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 38px;
+
+    @include vars.smaller {
+        font-size: 33px;
+    }
+}
+
+.section-subtitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+}

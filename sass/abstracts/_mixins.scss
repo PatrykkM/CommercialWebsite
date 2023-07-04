@@ -1,0 +1,13 @@
+@mixin box-shrink() {
+    max-width: 1600px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+@mixin box-center($margin-top) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: $margin-top;
+}

@@ -1,0 +1,84 @@
+@use '../abstracts' as vars;
+
+.icon {
+    transition: vars.$transition-length ease-in-out;
+    display: inline-block;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    width: 100%;
+    height: 100%;
+
+    &--hidden {
+        opacity: 0;
+    }
+
+    &--shopping-cart, &--search {
+        background: #fff;
+
+        &:hover {
+            background: vars.$color-text-tertiary;
+        }
+    }
+
+    &--shopping-cart {
+        mask-image: url('#{vars.$icon-path}/cart-shopping.svg');
+    }
+
+    &--search {
+        mask-image: url('#{vars.$icon-path}/search.svg');
+    }
+
+    &--feature {
+        background: vars.$color-ui-tertiary;
+    }
+
+    &--clock {
+        mask-image: url('#{vars.$icon-path}/clock.svg');
+    }
+
+    &--chart {
+        mask-image: url('#{vars.$icon-path}/chart.svg');
+    }
+
+    &--desktop {
+        mask-image: url('#{vars.$icon-path}/desktop.svg');
+    }
+
+    &--seo {
+        mask-image: url('#{vars.$icon-path}/seo.svg');
+    }
+
+    &--home {
+        mask-image: url('#{vars.$icon-path}/home.svg');
+    }
+
+    &--digital {
+        mask-image: url('#{vars.$icon-path}/digital.svg');
+    }
+
+    &--social {
+        mask-size: 20px;
+        background: vars.$color-ui-primary;
+
+        &:hover {
+            background: #f2dd8f;
+        }
+    }
+
+    &--facebook {
+        mask-image: url('#{vars.$icon-path}/facebook.svg');
+    }
+
+    &--twitter {
+        mask-image: url('#{vars.$icon-path}/twitter.svg');
+    }
+
+    &--pinterest {
+        mask-image: url('#{vars.$icon-path}/pinterest.svg');
+    }
+
+    &--instagram {
+        mask-image: url('#{vars.$icon-path}/instagram.svg');
+    }
+}
+

@@ -1,0 +1,72 @@
+@use '../abstracts' as vars;
+
+.button {
+    color: vars.$color-text-secondary;
+    padding: 7px 30px;
+    background: transparent;
+    border: 3px solid #fff;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    position: relative;
+    z-index: vars.$z-mid;
+    transition: all vars.$transition-length cubic-bezier(vars.$transition-bezier);
+
+    &:hover {
+        color: vars.$color-transparent-primary;
+    }
+
+    &::before,
+    &::after {
+        background: #fff;
+        content: '';
+        position: absolute;
+        z-index: vars.$z-low;
+        transition: all vars.$transition-length cubic-bezier(vars.$transition-bezier);
+    }
+
+    &::after {
+        height: 100%;
+        width: 0;
+        top: 0;
+        left: 0;
+    }
+
+    &:hover:after {
+        width: 100%;
+    }
+
+    &--subscribe {
+        border: none;
+        background: vars.$color-ui-tertiary;
+
+        &:hover {
+            color: vars.$color-text-secondary;
+        }
+
+        &::before,
+        &::after {
+            background: vars.$color-ui-secondary;
+            content: '';
+            position: absolute;
+            z-index: vars.$z-low;
+            transition: all vars.$transition-length cubic-bezier(vars.$transition-bezier);
+        }
+
+        &::after {
+            height: 100%;
+            width: 0;
+            top: 0;
+            left: 0;
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+    }
+
+    @include vars.narrow {
+        padding: 7px 18px;
+    }
+}
+

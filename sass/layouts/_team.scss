@@ -1,0 +1,83 @@
+@use '../abstracts' as vars;
+
+.team {
+    @include vars.box-shrink;
+    @include vars.box-center(80px);
+
+    &__text {
+        text-align: center;
+    }
+
+    &__list {
+        margin-top: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        column-gap: 60px;
+    }
+
+    &__person {
+        &-image-container {
+            position: relative;
+            transition: vars.$transition-length ease-out;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                opacity: 0;
+                transition: opacity vars.$transition-length ease-out;
+                background: linear-gradient(to bottom, vars.$color-transparent-primary, vars.$color-transparent-secondary);
+            }
+
+            &:hover {
+                transform: translate(-10px, -10px);
+                box-shadow: 10px 10px 0 vars.$color-ui-tertiary;
+            }
+
+            &:hover .socials {
+                opacity: 1;
+            }
+
+            &:hover::before {
+                opacity: .8;
+            }
+        }
+
+        &-content {
+            margin-top: 30px;
+            text-align: center;
+        }
+    }
+
+    @include vars.medium {
+        &__list {
+            column-gap: 40px;
+        }
+    }
+
+    @include vars.smaller {
+        &__list {
+            flex-direction: column;
+            width: 60%;
+        }
+
+        &__person {
+            margin-top: 50px;
+        }
+    }
+
+    @include vars.narrow {
+        &__list {
+            column-gap: 30px;
+            flex-direction: column;
+            width: 70%;
+        }
+
+        &__person {
+            margin-top: 50px;
+        }
+    }
+}

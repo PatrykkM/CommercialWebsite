@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins:ital,wght@0,400;0,600;1,300&display=swap');
+
+$font-family-primary: 'Poppins', sans-serif;
+$font-family-subtitle: 'Kaushan Script', cursive;
+
+$color-text-primary: #0b0b0b;
+$color-text-secondary: #ffffff;
+$color-text-tertiary: #bebebe;
+
+$color-ui-primary: #dd7872;
+$color-ui-secondary: #f2dd8f;
+$color-ui-tertiary: #95e1d3;
+$color-ui-white: #fff;
+
+$color-transparent-primary: rgba(221, 120, 114, .95);
+$color-transparent-secondary: rgba(242, 221, 143, .95);;
+$color-transparent-tertiary: rgba(149, 225, 211, .90);
+
+$transition-bezier: 1.000, 0.000, 0.000, 1.000;
+$transition-length: 0.35s;
+
+$z-low: -100;
+$z-mid: 100;
+$z-high: 1000;
+
+$img-path: '../assets/images';
+$icon-path: '../assets/icons';
+

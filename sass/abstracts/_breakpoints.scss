@@ -1,0 +1,30 @@
+$breakpoints: (
+    'medium': 1400px,
+    'smaller': 1100px,
+    'narrow': 700px,
+);
+
+@mixin medium {
+    @media screen and (max-width: map-get($breakpoints, 'medium')) {
+        @content;
+    }
+}
+
+@mixin smaller {
+    @media screen and (max-width: map-get($breakpoints, 'smaller')) {
+        @content;
+    }
+}
+
+@mixin narrow {
+    @media screen and (max-width: map-get($breakpoints, 'narrow')) {
+        @content;
+    }
+}
+
+@mixin landscape {
+    @media screen and (orientation: landscape) and (max-width: map-get($breakpoints, 'smaller')) and (max-height: map-get($breakpoints, 'narrow')) {
+        @content;
+    }
+}
+

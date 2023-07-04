@@ -1,0 +1,138 @@
+@use '../abstracts' as vars;
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    height: 70px;
+
+    &__logo {
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    &__hamburger {
+        display: none;
+        position: relative;
+        width: 30px;
+        height: 30px;
+
+        &-open, &-close {
+            position: absolute;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 45px;
+
+        &-item {
+            display: inline-block;
+            position: relative;
+
+            &-link {
+                font-size: 17px;
+                letter-spacing: .5px;
+                text-decoration: none;
+                color: vars.$color-text-secondary;
+                transition: vars.$transition-length;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    transform: scaleX(0) translateY(10px);
+                    height: 2px;
+                    bottom: 0;
+                    left: 0;
+                    background-color: vars.$color-ui-secondary;
+                    transform-origin: bottom right;
+                    transition: transform vars.$transition-length ease-out;
+                }
+
+                &:hover {
+                    color: vars.$color-ui-secondary;
+                }
+
+                &:hover::after {
+                    transform: scaleX(1) translateY(10px);
+                    transform-origin: bottom left;
+                }
+            }
+        }
+
+        &-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        &__hamburger {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    @include vars.smaller {
+        padding: 0;
+
+        &__logo {
+            font-size: 25px;
+        }
+
+        &__hamburger {
+            z-index: vars.$z-high;
+            display: block;
+        }
+
+        &__menu {
+            z-index: vars.$z-high;
+            background: vars.$color-transparent-tertiary;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-end;
+            position: fixed;
+            min-height: 100dvh;
+            width: 47vw;
+            top: 0;
+            right: 0;
+            padding-right: 60px;
+            transition: vars.$transition-length;
+            transform: translateX(47vw);
+
+            &--active {
+                pointer-events: all;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    @include vars.narrow {
+        &__logo {
+            font-size: 20px;
+        }
+    }
+
+    @include vars.landscape {
+        &__menu {
+            gap: 5px;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            position: fixed;
+            min-height: 100dvh;
+            width: 95vw;
+            padding: 10px 20px 0 20px;
+            transform: translateX(calc(90vw + 60px));
+
+            &--active {
+                pointer-events: all;
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}
